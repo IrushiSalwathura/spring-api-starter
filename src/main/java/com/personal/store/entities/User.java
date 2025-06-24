@@ -1,4 +1,4 @@
-package com.codewithmosh.store.entities;
+package com.personal.store.entities;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -44,8 +44,6 @@ public class User {
         address.setUser(null);
     }
 
-    @OneToOne(mappedBy = "user", cascade = CascadeType.REMOVE)
-    private Profile profile;
 
     @ManyToMany
     @JoinTable(
@@ -64,6 +62,7 @@ public class User {
         return getClass().getSimpleName() + "(" +
                 "id = " + id + ", " +
                 "name = " + name + ", " +
+                "password = " + password + ", " +
                 "email = " + email + ")";
     }
 }
